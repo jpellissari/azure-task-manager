@@ -8,6 +8,7 @@ routes.get('/statuscheck', (request, response) =>
   response.json({ message: "It's working baby" })
 )
 
+routes.get('/api/us-breaker/', new SearchWorkItemsForBreakdownSession().handle)
 routes.post(
   '/api/us-breaker/:parentID/new-task',
   new CreateTaskController().handle
